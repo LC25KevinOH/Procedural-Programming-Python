@@ -22,9 +22,21 @@ def receive_input() :
                 first = False
             else :
                 input_list_1.append(line)
+
+def give_output() :
+    """
+    Function will format and store the necessary data into an output file.
+    """
+    for employee in input_list_1 :
+        temp = employee.strip().split(",")
+        output_name = "employee_" + temp[0] + "_file.txt"
+
+        temp_out = os.path.join(CURRENT_DIRECTORY, output_name)
+
+        with open(temp_out, "x", encoding="utf-8") as employee_file:
+            employee_file.write(f"Your name is: {temp[1]}")
 print("Test..")
 
 receive_input()
 
-for item in input_list_1 :
-    print(item)
+give_output()
