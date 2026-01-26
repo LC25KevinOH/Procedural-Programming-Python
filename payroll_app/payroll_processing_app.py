@@ -8,7 +8,8 @@ import os
 CURRENT_DIRECTORY = os.path.dirname(__file__)
 
 INPUT_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'ppsn_name_payroll_v01.csv')
-input_list_1 = []
+
+EMPLOYEE_LIST = []
 
 def receive_input() :
     """
@@ -21,7 +22,7 @@ def receive_input() :
             if first :
                 first = False
             else :
-                input_list_1.append(line)
+                EMPLOYEE_LIST.append(line)
 
 def calc_gross() :
     """
@@ -46,7 +47,7 @@ def give_output() :
     """
     Function will format and store the necessary data into an output file.
     """
-    for employee in input_list_1 :
+    for employee in EMPLOYEE_LIST :
         temp = employee.strip().split(",")
         output_name = "employee_" + temp[0] + "_file.txt"
 
