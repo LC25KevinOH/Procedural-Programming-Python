@@ -23,6 +23,25 @@ def receive_input() :
             else :
                 input_list_1.append(line)
 
+def calc_gross() :
+    """
+    Calculate each Employees Gross Pay based on Hours Worked and Pay Rate
+    (Starts running Total)
+    """
+
+def add_bonuses() :
+    """
+    Simple function to Add Bonuses (parameter)
+    (Added to running total before/after Tax)
+    """
+
+def subtract_tax() :
+    """
+    Calculate the necessary amount of Tax to be Paid based on Tax Rate,
+    Subtract from Employee Pay
+    (Subtracting from running total)
+    """
+
 def give_output() :
     """
     Function will format and store the necessary data into an output file.
