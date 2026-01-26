@@ -7,7 +7,11 @@ import os
 
 CURRENT_DIRECTORY = os.path.dirname(__file__)
 
-INPUT_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'ppsn_name_payroll_v01.csv')
+NAME_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'ppsn_name_payroll_v01.csv')
+HOURS_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'hours_worked_payroll_v01.csv')
+PAY_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'pay_rate_payroll_v01.csv')
+BONUSES_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'bonuses_payroll_v01.csv')
+TAX_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'tax_payroll_v01.csv')
 
 EMPLOYEE_LIST = []
 
@@ -17,7 +21,7 @@ def receive_input() :
     """
     first = True
 
-    with open(INPUT_FILE_NAME, "r", encoding="utf-8") as name_storage :
+    with open(NAME_FILE_NAME, "r", encoding="utf-8") as name_storage :
         for line in name_storage :
             if first :
                 first = False
