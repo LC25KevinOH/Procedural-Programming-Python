@@ -1,6 +1,26 @@
-# Software Design Document
+# Software Design Document : Payroll Processing App
+
+Kevin O' Halloran
+
+- [Software Design Document : Payroll Processing App](#software-design-document--payroll-processing-app)
+  - [Program Overview](#program-overview)
+  - [Program Requirements](#program-requirements)
+    - [Functional Requirements](#functional-requirements)
+    - [Technical Requirements](#technical-requirements)
+    - [Input Format](#input-format)
+      - [PPSN](#ppsn)
+      - [Timetables / Hours Worked](#timetables--hours-worked)
+      - [Pay Rate (Per Hour)](#pay-rate-per-hour)
+      - [Bonuses (Taxable)](#bonuses-taxable)
+      - [Tax Rate (Percent / Amount)](#tax-rate-percentamount)
+    - [Output Format](#output-format)
+      - [Payroll Table](#payroll-table)
+  - [Testing Approach](#testing-approach)
+
 
 ## Program Overview
+
+This payroll application is a piece software that will assist Users in processing any quantity of Employee data. Users will be able to input multiple files of the CSV format from various Departments and receive processed Output files. This software aims to provide a simple and efficient method for the necessary calculations relating to each Employees Gross and Net pay.  
 
 ## Program Requirements
 
@@ -62,7 +82,7 @@ PPSN,TaxRate,Format
 
 This program will output a single CSV file. The format will be shown below, it will include all relevant information for each employee.
 
-#### Payroll table
+#### Payroll Table
 
 ```
 PPSN,Name,HoursWorked,GrossPay,Bonuses,TaxPaid,NetPay
