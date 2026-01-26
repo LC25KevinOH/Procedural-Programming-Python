@@ -90,3 +90,5 @@ PPSN,Name,HoursWorked,GrossPay,Bonuses,TaxPaid,NetPay
 ```
 
 ## Testing Approach
+
+The approach to testing this application will be primarily focused on Unit Testing. This is where each function will be tested with the 'unittest' module to use a specified set of input data to check it will output the expected results.
