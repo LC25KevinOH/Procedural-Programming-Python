@@ -75,7 +75,7 @@ PPSN,Bonuses
 
 ```
 PPSN,TaxRate
-1234567A,25
+1234567A,20
 ```
 
 ### Output Format
@@ -86,7 +86,7 @@ This program will output a single CSV file. The format will be shown below, it w
 
 ```
 PPSN,Name,HoursWorked,GrossPay,Bonuses,TaxPaid,NetPay
-1234567A,John Smith,38,532,50,-145,437
+1234567A,John Smith,38,532,50,-116,466
 ```
 
 ## Testing Approach
