@@ -29,7 +29,7 @@ This payroll application is a piece software that will assist Users in processin
 - Read various CSV files to gather data on categories listed in the Input section
 - Calculate the each Employees gross pay based on their rate of pay and hours worked
 - Add any bonuses (taxable)
-- Calculate taxes if necessary and Subtract them from total
+- Calculate taxes and Subtract them from total
 - Create and Output a table with all calculated data
 - Create and Output a payslip for each Employee individually
 
@@ -74,8 +74,8 @@ PPSN,Bonuses
 #### Tax Rate (Percent/Amount)
 
 ```
-PPSN,TaxRate,Format
-1234567A,25,P
+PPSN,TaxRate
+1234567A,25
 ```
 
 ### Output Format

@@ -35,8 +35,15 @@ def give_output() :
 
         with open(temp_out, "x", encoding="utf-8") as employee_file:
             employee_file.write(f"Your name is: {temp[1]}")
-print("Test..")
 
-receive_input()
+def main_function() :
+    """
+    Main function of program to run other functions
+    """
+    print("Test..")
 
-give_output()
+    receive_input()
+
+    give_output()
+
+main_function()
