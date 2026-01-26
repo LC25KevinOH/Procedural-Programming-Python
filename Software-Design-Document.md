@@ -8,7 +8,7 @@ Kevin O' Halloran
     - [Functional Requirements](#functional-requirements)
     - [Technical Requirements](#technical-requirements)
     - [Input Format](#input-format)
-      - [PPSN](#ppsn)
+      - [PPSN / Name](#ppsn--name)
       - [Timetables / Hours Worked](#timetables--hours-worked)
       - [Pay Rate (Per Hour)](#pay-rate-per-hour)
       - [Bonuses (Taxable)](#bonuses-taxable)
@@ -43,7 +43,7 @@ This payroll application is a piece software that will assist Users in processin
 
 The input for this program will be in the format of CSV (Comma Separated Values) files. The plan for this program will be to accept various input files, which will be listed below.
 
-#### PPSN
+#### PPSN / Name
 
 ```
 PPSN,Name
