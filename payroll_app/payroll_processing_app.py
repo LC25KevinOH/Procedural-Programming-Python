@@ -26,7 +26,9 @@ def receive_input() :
             if first :
                 first = False
             else :
-                EMPLOYEE_LIST.append(line)
+                EMPLOYEE_LIST.append(line.strip().split(","))
+                #for key, value in line.strip().split(",") :
+                    #EMPLOYEE_LIST.append({key: value})
 
 def calc_gross() :
     """
@@ -68,6 +70,6 @@ def main_function() :
 
     receive_input()
 
-    give_output()
+    print(EMPLOYEE_LIST)
 
 main_function()
