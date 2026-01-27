@@ -6,17 +6,6 @@ Process/Calculate date and convert into a single output file.
 import os
 from Functions.read_input import read_csv
 
-
-# CURRENT_DIRECTORY = os.path.dirname(__file__)
-
-# NAME_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'ppsn_name_payroll_v01.csv')
-# HOURS_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'hours_worked_payroll_v01.csv')
-# PAY_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'pay_rate_payroll_v01.csv')
-# BONUSES_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'bonuses_payroll_v01.csv')
-# TAX_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'tax_payroll_v01.csv')
-
-#EMPLOYEE_LIST = []
-
 #Constants Definition
 CURRENT_DIRECTORY = os.path.dirname(__file__)
 
@@ -25,21 +14,6 @@ HOURS_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'hours_worked_payroll
 PAY_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'pay_rate_payroll_v01.csv')
 BONUSES_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'bonuses_payroll_v01.csv')
 TAX_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'tax_rate_payroll_v01.csv')
-
-# def receive_input() :
-#     """
-#     Function will convert data from CSV input files into lists ready for other functions to process.
-#     """
-#     first = True
-
-#     with open(NAME_FILE_NAME, "r", encoding="utf-8") as name_storage :
-#         for line in name_storage :
-#             if first :
-#                 first = False
-#             else :
-#                 EMPLOYEE_LIST.append(line.strip().split(","))
-#                 #for key, value in line.strip().split(",") :
-#                     #EMPLOYEE_LIST.append({key: value})
 
 def calc_gross() :
     """
@@ -87,12 +61,6 @@ def main_function() :
     read_csv(BONUSES_FILE_NAME, salary_dict, "Bonuses")
     read_csv(TAX_FILE_NAME, salary_dict, "Tax")
 
-    for ppsn, record in salary_dict.items() :
-        record["Hours"] = float(record["Hours"])
-        record["Rate"] = float(record["Rate"])
-        record["Bonuses"] = float(record["Bonuses"])
-        record["Tax"] = float(record["Tax"])
-    
     print(salary_dict)
 
 if __name__ == "__main__" :

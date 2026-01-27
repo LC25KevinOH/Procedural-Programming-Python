@@ -3,15 +3,6 @@ Read input CSV files and store data in a dictionary.
 """
 import csv
 
-#Constants Definition
-# CURRENT_DIRECTORY = os.path.dirname(__file__)
-
-# NAME_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'ppsn_name_payroll_v01.csv')
-# HOURS_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'hours_worked_payroll_v01.csv')
-# PAY_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'pay_rate_payroll_v01.csv')
-# BONUSES_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'bonuses_payroll_v01.csv')
-# TAX_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'tax_rate_payroll_v01.csv')
-
 def read_csv(filename, dict_to_update, field_name) :
     """
     Read a CSV file and update a dictionary with the data found in the file.
@@ -38,16 +29,13 @@ def read_csv(filename, dict_to_update, field_name) :
             employee_dict[field_name] = field
             dict_to_update[ppsn] = employee_dict
 
-# salary_dict = {}
+    if field_name in ["Hours", "Rate", "Bonuses", "Tax"] :
+        float_data(dict_to_update, field_name)
 
-# read_csv(NAME_FILE_NAME, salary_dict, "Name")
-# read_csv(HOURS_FILE_NAME, salary_dict, "Hours")
-# read_csv(PAY_FILE_NAME, salary_dict, "Rate")
-# read_csv(BONUSES_FILE_NAME, salary_dict, "Bonuses")
-# read_csv(TAX_FILE_NAME, salary_dict, "Tax")
+def float_data(dict_name, field_name) :
+    """
+    Convert the specified field in the dictionary to a float.
+    """
+    for _, record in dict_name.items() :
+        record[field_name] = float(record[field_name])
 
-# for ppsn, record in salary_dict.items() :
-#     record["Hours"] = float(record["Hours"])
-#     record["Rate"] = float(record["Rate"])
-#     record["Bonuses"] = float(record["Bonuses"])
-#     record["Tax"] = float(record["Tax"])
