@@ -17,19 +17,6 @@ PAY_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'pay_rate_payroll_v01.c
 BONUSES_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'bonuses_payroll_v01.csv')
 TAX_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'tax_rate_payroll_v01.csv')
 
-# def give_output() :
-#     """
-#     Function will format and store the necessary data into an output file.
-#     """
-#     for employee in EMPLOYEE_LIST :
-#         temp = employee.strip().split(",")
-#         output_name = "employee_" + temp[0] + "_file.txt"
-
-#         temp_out = os.path.join(CURRENT_DIRECTORY, output_name)
-
-#         with open(temp_out, "x", encoding="utf-8") as employee_file:
-#             employee_file.write(f"Your name is: {temp[1]}")
-
 def main_function() :
     """
     Main function of program to run other functions
