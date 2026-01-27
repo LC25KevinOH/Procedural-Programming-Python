@@ -5,6 +5,7 @@ Process/Calculate date and convert into a single output file.
 """
 import os
 from Functions.read_input import read_csv
+from Functions.give_output import give_output
 
 #Constants Definition
 CURRENT_DIRECTORY = os.path.dirname(__file__)
@@ -51,7 +52,7 @@ def main_function() :
     """
     Main function of program to run other functions
     """
-    print("Test..")
+    print("Start..")
 
     salary_dict = {}
 
@@ -61,7 +62,9 @@ def main_function() :
     read_csv(BONUSES_FILE_NAME, salary_dict, "Bonuses")
     read_csv(TAX_FILE_NAME, salary_dict, "Tax")
 
-    print(salary_dict)
+    give_output(salary_dict)
+
+    print("End..")
 
 if __name__ == "__main__" :
     main_function()

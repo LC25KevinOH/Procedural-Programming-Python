@@ -38,4 +38,3 @@ def float_data(dict_name, field_name) :
     """
     for _, record in dict_name.items() :
         record[field_name] = float(record[field_name])
-
