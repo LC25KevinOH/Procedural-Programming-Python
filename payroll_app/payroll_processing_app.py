@@ -16,11 +16,16 @@ PAY_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'pay_rate_payroll_v01.c
 BONUSES_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'bonuses_payroll_v01.csv')
 TAX_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'tax_rate_payroll_v01.csv')
 
-def calc_gross() :
+def calc_gross(which_dict) :
     """
     Calculate each Employees Gross Pay based on Hours Worked and Pay Rate
     (Starts running Total)
     """
+    for _, record in which_dict.items():
+        hours = record.get("Hours", 0)
+        rate = record.get("Rate", 0)
+        gross_pay = hours * rate
+        record["GrossPay"] = gross_pay
 
 def add_bonuses() :
     """
@@ -61,6 +66,8 @@ def main_function() :
     read_csv(PAY_FILE_NAME, salary_dict, "Rate")
     read_csv(BONUSES_FILE_NAME, salary_dict, "Bonuses")
     read_csv(TAX_FILE_NAME, salary_dict, "Tax")
+
+    calc_gross(salary_dict)
 
     give_output(salary_dict)
 
