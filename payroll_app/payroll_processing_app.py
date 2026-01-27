@@ -36,12 +36,17 @@ def add_bonuses(which_dict) :
         bonuses = record.get("Bonuses", 0)
         record["GrossPay"] += bonuses
 
-def subtract_tax() :
+def subtract_tax(which_dict) :
     """
     Calculate the necessary amount of Tax to be Paid based on Tax Rate,
     Subtract from Employee Pay
     (Subtracting from running total)
     """
+    for _, record in which_dict.items():
+        tax_rate = record.get("Tax", 0)
+        tax_amount = (record["GrossPay"] / 100) * tax_rate
+        record["TaxAmount"] = tax_amount
+        record["NetPay"] = record["GrossPay"] - tax_amount
 
 # def give_output() :
 #     """
@@ -73,6 +78,8 @@ def main_function() :
     calc_gross(salary_dict)
 
     add_bonuses(salary_dict)
+
+    subtract_tax(salary_dict)
 
     give_output(salary_dict)
 
