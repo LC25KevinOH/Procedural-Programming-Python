@@ -27,11 +27,14 @@ def calc_gross(which_dict) :
         gross_pay = hours * rate
         record["GrossPay"] = gross_pay
 
-def add_bonuses() :
+def add_bonuses(which_dict) :
     """
     Simple function to Add Bonuses (parameter)
     (Added to running total before/after Tax)
     """
+    for _, record in which_dict.items():
+        bonuses = record.get("Bonuses", 0)
+        record["GrossPay"] += bonuses
 
 def subtract_tax() :
     """
@@ -68,6 +71,8 @@ def main_function() :
     read_csv(TAX_FILE_NAME, salary_dict, "Tax")
 
     calc_gross(salary_dict)
+
+    add_bonuses(salary_dict)
 
     give_output(salary_dict)
 
