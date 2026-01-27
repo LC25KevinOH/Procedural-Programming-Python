@@ -1,0 +1,9 @@
+Payroll Information for Employee PPSN: 1234567A
+{'Bonuses': 50.0,
+ 'GrossPay': 582.0,
+ 'Hours': 38.0,
+ 'Name': 'John Smith',
+ 'NetPay': 465.6,
+ 'Rate': 14.0,
+ 'Tax': 20.0,
+ 'TaxAmount': 116.4}

@@ -1,0 +1,9 @@
+Payroll Information for Employee PPSN: 5678912E
+{'Bonuses': 80.0,
+ 'GrossPay': 695.0,
+ 'Hours': 41.0,
+ 'Name': 'Regina Good',
+ 'NetPay': 521.25,
+ 'Rate': 15.0,
+ 'Tax': 25.0,
+ 'TaxAmount': 173.75}

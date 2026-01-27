@@ -50,7 +50,7 @@ def main_function() :
 
     subtract_tax(salary_dict)
 
-    give_output(salary_dict)
+    give_output(salary_dict, CURRENT_DIRECTORY)
 
     print("End..")
 
