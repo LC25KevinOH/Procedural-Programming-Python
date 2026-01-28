@@ -3,14 +3,18 @@ Output the salary dictionary in a readable format.
 """
 import os
 import pprint
+from datetime import datetime
 
 def give_individual_outputs(which_dict, whic_dir) :
     """
     Function will format and output multiple employee payslips in TXT format.
     """
-    for ppsn, record in which_dict.items():
-        output_name = f"employee_{ppsn}_file.txt"
+    now = datetime.now()
+    date_str = now.strftime("%m-%Y")
 
+    for ppsn, record in which_dict.items():
+
+        output_name = f"employee_{ppsn}_{date_str}.txt"
         temp_out = os.path.join(whic_dir, "Output", output_name)
 
         with open(temp_out, "w", encoding="utf-8") as employee_file:
@@ -22,8 +26,12 @@ def give_all_output(which_dict, which_dir) :
     """"
     Function will format and store all employees' data into a single CSV output file.
     """
+    now = datetime.now()
+    date_str = now.strftime("%m-%Y")
+
     output_data = "PPSN, Name, Gross Salary, Tax Paid, Net Salary\n"
-    output_file_path = os.path.join(which_dir, "Output", "all_employees_output.csv")
+    output_name = f"all_employees_{date_str}.csv"
+    output_file_path = os.path.join(which_dir, "Output", output_name)
 
     for ppsn, record in which_dict.items():
         name = record.get("Name", "Unknown")
