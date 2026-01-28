@@ -5,7 +5,7 @@ Process/Calculate date and convert into a single output file.
 """
 import os
 from Functions.read_input import read_csv
-from Functions.give_output import give_individual_outputs, give_all_output
+from Functions.give_output import what_output
 from Functions.calculate_pay import calc_gross, add_bonuses, subtract_tax
 
 #Constants Definition
@@ -21,7 +21,7 @@ def main_function() :
     """
     Main function of program to run other functions
     """
-    print("Start..")
+    print("Starting Payroll Processing Application...")
 
     salary_dict = {}
 
@@ -37,10 +37,9 @@ def main_function() :
 
     subtract_tax(salary_dict)
 
-    give_individual_outputs(salary_dict, CURRENT_DIRECTORY)
-    give_all_output(salary_dict, CURRENT_DIRECTORY)
+    what_output(salary_dict, CURRENT_DIRECTORY)
 
-    print("End..")
+    print("End of Payroll Processing Application...")
 
 if __name__ == "__main__" :
     main_function()

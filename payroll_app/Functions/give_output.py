@@ -35,3 +35,24 @@ def give_all_output(which_dict, which_dir) :
 
     with open(output_file_path, "w", encoding="utf-8") as output_file:
         output_file.write(output_data)
+
+def what_output(which_dict, which_dir) :
+    """
+    Function to ask user what output they want.
+    1 for individual outputs
+    2 for all outputs in one file
+    """
+    user_input = input(
+        "Do you want individual outputs (1), all outputs in one file (2) or both (3)? "
+        ).strip().upper()
+
+    if user_input == "1" :
+        give_individual_outputs(which_dict, which_dir)
+    elif user_input == "2" :
+        give_all_output(which_dict, which_dir)
+    elif user_input == "3" :
+        give_individual_outputs(which_dict, which_dir)
+        give_all_output(which_dict, which_dir)
+    else :
+        print("Invalid input. Please enter '1', '2' or '3'.")
+        what_output(which_dict, which_dir)
