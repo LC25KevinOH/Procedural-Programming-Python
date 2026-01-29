@@ -5,6 +5,15 @@ def calc_gross(which_dict) :
     """
     Calculate each Employees Gross Pay based on Hours Worked and Pay Rate
     (Starts running Total)
+
+    Parameters
+    ----------
+    which_dict : dict
+        The dictionary containing employee data.
+    
+    Returns
+    -------
+    None
     """
     for _, record in which_dict.items():
         hours = record.get("Hours", 0)
@@ -16,6 +25,15 @@ def add_bonuses(which_dict) :
     """
     Simple function to Add Bonuses.
     (Added to running total before/after Tax)
+
+    Parameters
+    ----------
+    which_dict : dict
+        The dictionary containing employee data.
+    
+    Returns
+    -------
+    None
     """
     for _, record in which_dict.items():
         bonuses = record.get("Bonuses", 0)
@@ -26,6 +44,15 @@ def subtract_tax(which_dict) :
     Calculate the necessary amount of Tax to be Paid based on Tax Rate,
     Subtract from Employee Pay
     (Subtracting from running total)
+
+    Parameters
+    ----------
+    which_dict : dict
+        The dictionary containing employee data.
+    
+    Returns
+    -------
+    None
     """
     for _, record in which_dict.items():
         tax_rate = record.get("Tax", 0)

@@ -35,6 +35,17 @@ def read_csv(filename, dict_to_update, field_name) :
 def float_data(dict_name, field_name) :
     """
     Convert the specified field in the dictionary to a float.
+
+    Parameters
+    ----------
+    dict_name : dict
+        The dictionary containing the data.
+    field_name : str
+        The name of the field to convert to float.
+    
+    Returns
+    -------
+    None
     """
     for _, record in dict_name.items() :
         record[field_name] = float(record[field_name])
