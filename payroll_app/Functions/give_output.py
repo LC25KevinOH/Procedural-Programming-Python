@@ -65,3 +65,27 @@ def what_output(which_dict, which_dir) :
     else :
         print("Invalid input. Please enter '1', '2' or '3'.")
         what_output(which_dict, which_dir)
+
+def user_choice(valid_choices, choice_prompt) :
+    """
+    Function to get validated user choice from given options.
+    
+    Parameters
+    ----------
+    valid_choices : list
+        A list of valid choices the user can make.
+    choice_prompt : str
+        The prompt to display to the user.
+    
+    Returns
+    -------
+    str
+        The validated user choice.
+    """
+    user_input = input(choice_prompt).strip().upper()
+
+    while user_input not in valid_choices :
+        print(f"Invalid input. Please enter one of the following: {', '.join(valid_choices)}.")
+        user_input = input(choice_prompt).strip().upper()
+
+    return user_input
