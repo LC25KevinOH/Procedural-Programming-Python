@@ -1,9 +1,0 @@
-Payroll Information for Employee PPSN: 4567891D
-{'Bonuses': 50.0,
- 'GrossPay': 596.0,
- 'Hours': 39.0,
- 'Name': 'Roberto Stevenson',
- 'NetPay': 476.8,
- 'Rate': 14.0,
- 'Tax': 20.0,
- 'TaxAmount': 119.2}
