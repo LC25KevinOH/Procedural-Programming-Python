@@ -7,6 +7,17 @@ from datetime import datetime
 def give_individual_outputs(which_dict, whic_dir) :
     """
     Function will format and output multiple employee payslips in TXT format.
+
+    Parameters
+    ----------
+    which_dict : dict
+        The dictionary containing employee payroll data.
+    whic_dir : str
+        The directory where output files will be saved.
+    
+    Returns
+    -------
+    None
     """
     now = datetime.now()
     date_str = now.strftime("%m-%Y")
@@ -36,6 +47,17 @@ def give_individual_outputs(which_dict, whic_dir) :
 def give_all_output(which_dict, which_dir) :
     """"
     Function will format and store all employees' data into a single CSV output file.
+
+    Parameters
+    ----------
+    which_dict : dict
+        The dictionary containing employee payroll data.
+    which_dir : str
+        The directory where output files will be saved.
+    
+    Returns
+    -------
+    None
     """
     now = datetime.now()
     date_str = now.strftime("%m-%Y")
