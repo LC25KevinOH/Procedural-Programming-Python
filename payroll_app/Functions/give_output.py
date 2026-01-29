@@ -2,7 +2,6 @@
 Handle the output of payroll data in different formats.
 """
 import os
-import pprint
 from datetime import datetime
 
 def give_individual_outputs(which_dict, whic_dir) :
@@ -17,10 +16,22 @@ def give_individual_outputs(which_dict, whic_dir) :
         output_name = f"employee_{ppsn}_{date_str}.txt"
         temp_out = os.path.join(whic_dir, "Output", output_name)
 
+        name = record.get("Name", "Unknown")
+        gross_pay = f"{record.get('GrossPay', 0):,.2f}"
+        tax = f"{record.get('TaxAmount', 0):,.2f}"
+        net_pay = f"{record.get('NetPay', 0):,.2f}"
+
         with open(temp_out, "w", encoding="utf-8") as employee_file:
-            employee_file.write(f"Payroll Information for Employee PPSN: {ppsn}\n")
-            employee_file.write(pprint.pformat(record))
-            employee_file.write("\n")
+            employee_file.write(f"{'='*40}\n")
+            employee_file.write("Payroll Information\n")
+            employee_file.write(f"Employee PPSN: {ppsn}\n")
+            employee_file.write(f"Name: {name}\n")
+            employee_file.write(f"Pay Date: {date_str}\n")
+            employee_file.write(f"{'-'*40}\n")
+            employee_file.write(f"{'Gross Pay:':<20}{gross_pay:>15}\n")
+            employee_file.write(f"{'Tax Paid:':<20}{tax:>15}\n")
+            employee_file.write(f"{'Net Pay:':<20}{net_pay:>15}\n")
+            employee_file.write(f"{'='*40}\n")
 
 def give_all_output(which_dict, which_dir) :
     """"
