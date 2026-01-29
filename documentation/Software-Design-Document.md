@@ -30,8 +30,8 @@ This payroll application is a piece software that will assist Users in processin
 - Calculate the each Employees gross pay based on their rate of pay and hours worked
 - Add any bonuses (taxable)
 - Calculate taxes and Subtract them from total
-- Create and Output a table with all calculated data
-- Create and Output a payslip for each Employee individually
+- Create and Output a table with all calculated data (CSV Format)
+- Create and Output a payslip for each Employee individually (TXT Format)
 
 ### Technical Requirements
 
@@ -41,7 +41,7 @@ This payroll application is a piece software that will assist Users in processin
 
 ### Input Format
 
-The input for this program will be in the format of CSV (Comma Separated Values) files. The plan for this program will be to accept various input files, which will be listed below.
+The input for this program will be in the format of CSV (Comma Separated Values) files. The plan for this program will be to accept 5 input files, which will be listed below.
 
 #### PPSN / Name
 
@@ -80,15 +80,38 @@ PPSN,TaxRate
 
 ### Output Format
 
-This program will output a single CSV file. The format will be shown below, it will include all relevant information for each employee.
+This program will output either a single CSV file or multiple TXT files depending on User choice. The format will be shown for both below. The CSV will provide less information for all Employees, while the TXT payslips will provide all information.
 
-#### Payroll Table
+#### CSV Output
 
 ```
-PPSN,Name,HoursWorked,GrossPay,Bonuses,TaxPaid,NetPay
-1234567A,John Smith,38,532,50,-116,466
+PPSN,Name,Gross Salary,Tax Paid,Net Salary
+1234567A, John Smith, 582.0, 116.4, 465.6
+```
+
+#### TXT Output
+
+```
+Payroll Information for Employee PPSN: 1234567A
+{'Bonuses': 50.0,
+ 'GrossPay': 582.0,
+ 'Hours': 38.0,
+ 'Name': 'John Smith',
+ 'NetPay': 465.6,
+ 'Rate': 14.0,
+ 'Tax': 20.0,
+ 'TaxAmount': 116.4}
 ```
 
 ## Testing Approach
 
-The approach to testing this application will be primarily focused on Unit Testing. This is where each function will be tested with the 'unittest' module to use a specified set of input data to check it will output the expected results.
+The approach to testing this application would be primarily focused on Unit Testing. This is where each function will be tested with the 'unittest' module to use a specified set of input data to check it will output the expected results.
+
+This program will instead have a more basic approach to testing based on the size/scope of the functionality. There will be 5 main basic tests manually performed to check different levels of functionality. They will be listed here, but for a more detailed description can be found in the 'Procedural Programming – Report Document' file.
+
+Testing:
+ - To run the program and check for any errors
+ - To check if the program can read the given input files and produce the desired output files 
+ - To check the output files for expected result based on a given input 
+ - To check if the app meets compatible criteria for potentially running on Linux
+ - To test User input section of the program to see: 1. each valid option 2. an invalid option
