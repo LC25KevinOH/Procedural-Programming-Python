@@ -78,3 +78,40 @@ You can check the commits section of the chosen GitHub repository to verify the 
 `git log --pretty=fuller -N`
 
 Use this to verify the last 'N' amount of commits in the terminal.
+
+## Revert back to a previous commit
+
+### Tip
+
+To get out of `git log --oneline` press 'Q' key.
+
+### Step 1: See previous commits
+
+`git log --oneline`
+
+This will allow you to find the hash value for the commit you wish to revert back to.
+
+### Step 2: Reverting to commit
+
+`git reset --hard 1234efg`
+
+The last string of the above command should be replaced with the hash value.
+
+### Step 3: Push changes to GitHub
+
+`git push origin main --force`
+
+This will confirm the revert.
+
+## GitIgnore
+
+### Standard
+
+Create a file called '.gitignore' and enter the name of files and folders for git to ignore when making commits.
+
+### Everything in a folder (but not the folder itself)
+
+Create a file called '.gitignore' inside the folder. Place the following two lines:
+
+`*`
+`!.gitignore`
