@@ -19,7 +19,20 @@ TAX_FILE_NAME = os.path.join(CURRENT_DIRECTORY, 'Input', 'tax_rate_payroll_v01.c
 
 def main_function() :
     """
-    Main function of program to run other functions
+    Main function of program to run other functions.
+
+    Has no parameters or return values.
+    Expects the above defined input files to be present in the Input folder,
+    and to meet the expected format. Output files will be created in the Output folder.
+
+    Steps performed:
+    *. Print messages indicateing start and end of program.
+    1. A new dictionary 'salary_dict' is created to hold all employee payroll data.
+    2. The 'read_csv' function is called for each input file to populate 'salary_dict'.
+    3. The payroll calculation functions are called in sequence to compute gross pay,
+       add bonuses, and subtract tax.
+    4. The user is prompted to choose the output format (individual files, single file, or both).
+    5. The 'which_output' function is called to generate the desired output files.
     """
     print("Starting Payroll Processing Application...")
 
@@ -32,12 +45,9 @@ def main_function() :
     read_csv(TAX_FILE_NAME, salary_dict, "Tax")
 
     calc_gross(salary_dict)
-
     add_bonuses(salary_dict)
-
     subtract_tax(salary_dict)
 
-    #what_output(salary_dict, CURRENT_DIRECTORY)
     output_choice = user_choice(
         ["1", "2", "3"],
         "Do you want individual outputs (1), all outputs in one file (2) or both (3)? "
