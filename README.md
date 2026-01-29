@@ -31,6 +31,9 @@ If you are signed into one of your alternate GitHub accounts and push multiple c
  - Never click "Sync" at any point. It is not necessary and will cause issues
  - If Vim opens at any point: Esc -> :wq
  - Only set commits you care to change to "edit", all others can remain as "pick"
+ - `git status` can be used in the terminal to verify what stage of the rebase you are on.
+ - Don't close the terminal once you begin the process.
+ - `git rebase --abort` if you run into issues with the process and want to start again.
 
 ### Step 1: Configure VS Code as Git editor (avoids Vim)
 
