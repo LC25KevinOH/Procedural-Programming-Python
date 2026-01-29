@@ -1,7 +1,7 @@
 """
 Payroll Processing Application: 
 Take input from multiple CSV input files, 
-Process/Calculate date and convert into a single output file.
+Process/Calculate data and convert into a single or multiple output files.
 """
 import os
 from Functions.read_input import read_csv

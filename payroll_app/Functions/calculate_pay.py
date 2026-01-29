@@ -1,5 +1,5 @@
 """
-Module to calculate gross and net pay for employees.
+Calculate gross and net pay for employees.
 """
 def calc_gross(which_dict) :
     """
@@ -14,7 +14,7 @@ def calc_gross(which_dict) :
 
 def add_bonuses(which_dict) :
     """
-    Simple function to Add Bonuses (parameter)
+    Simple function to Add Bonuses.
     (Added to running total before/after Tax)
     """
     for _, record in which_dict.items():

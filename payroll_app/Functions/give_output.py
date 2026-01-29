@@ -1,5 +1,5 @@
 """
-Output the salary dictionary in a readable format.
+Handle the output of payroll data in different formats.
 """
 import os
 import pprint
@@ -49,6 +49,7 @@ def what_output(which_dict, which_dir) :
     Function to ask user what output they want.
     1 for individual outputs
     2 for all outputs in one file
+    3 for both outputs
     """
     user_input = input(
         "Do you want individual outputs (1), all outputs in one file (2) or both (3)? "
