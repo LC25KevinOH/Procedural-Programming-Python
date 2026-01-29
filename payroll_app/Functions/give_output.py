@@ -66,6 +66,32 @@ def what_output(which_dict, which_dir) :
         print("Invalid input. Please enter '1', '2' or '3'.")
         what_output(which_dict, which_dir)
 
+def which_output(which_dict, which_dir, what_choice) :
+    """
+    Function to direct to the appropriate output function based on user choice.
+
+    Parameters
+    ----------
+    which_dict : dict
+        The dictionary containing employee payroll data.
+    which_dir : str
+        The directory where output files will be saved.
+    what_choice : str
+        The user's choice for output type ("1", "2", or "3").
+    
+    Returns
+    -------
+    None
+    """
+    match what_choice :
+        case "1" :
+            give_individual_outputs(which_dict, which_dir)
+        case "2" :
+            give_all_output(which_dict, which_dir)
+        case "3" :
+            give_individual_outputs(which_dict, which_dir)
+            give_all_output(which_dict, which_dir)
+
 def user_choice(valid_choices, choice_prompt) :
     """
     Function to get validated user choice from given options.
