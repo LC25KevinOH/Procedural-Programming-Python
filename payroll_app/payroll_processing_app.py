@@ -5,7 +5,7 @@ Process/Calculate data and convert into a single or multiple output files.
 """
 import os
 from Functions.read_input import read_csv
-from Functions.give_output import what_output
+from Functions.give_output import which_output, user_choice
 from Functions.calculate_pay import calc_gross, add_bonuses, subtract_tax
 
 #Constants Definition
@@ -37,7 +37,13 @@ def main_function() :
 
     subtract_tax(salary_dict)
 
-    what_output(salary_dict, CURRENT_DIRECTORY)
+    #what_output(salary_dict, CURRENT_DIRECTORY)
+    output_choice = user_choice(
+        ["1", "2", "3"],
+        "Do you want individual outputs (1), all outputs in one file (2) or both (3)? "
+        )
+
+    which_output(salary_dict, CURRENT_DIRECTORY, output_choice)
 
     print("End of Payroll Processing Application...")
 
