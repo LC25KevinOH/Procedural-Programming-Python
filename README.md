@@ -19,7 +19,8 @@ This payroll application is a piece software that will assist Users in processin
 - give_output.py
   - give_individual_outputs()
   - give_all_output()
-  - what_output()
+  - which_output()
+  - user_choice()
 
 ## Fix when wrong account is used for commits
 
