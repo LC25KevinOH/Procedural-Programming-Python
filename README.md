@@ -1,6 +1,6 @@
 # Procedural-Programming-Python
 
-This payroll application is a piece software that will assist Users in processing any quantity of Employee data. Users will be able to input multiple files of the CSV format from various Departments and receive processed Output files. This software aims to provide a simple and efficient method for the necessary calculations relating to each Employees Gross and Net pay. 
+This payroll application is a piece software that will assist Users in processing any quantity of Employee data. Users will be able to input multiple files of the CSV format from various Departments and receive processed Output files. This software aims to provide a simple and efficient method for the necessary calculations relating to each Employees Gross and Net pay.  
 
 ## Files / Functions:
 
