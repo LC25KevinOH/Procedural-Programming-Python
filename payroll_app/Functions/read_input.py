@@ -1,4 +1,6 @@
 """
+Author: Kevin O' Halloran
+Date: 30/01/2026
 Read input CSV files and store data in a dictionary.
 """
 import csv

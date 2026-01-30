@@ -1,4 +1,6 @@
 """
+Author: Kevin O' Halloran
+Date: 30/01/2026
 Calculate gross and net pay for employees.
 """
 def calc_gross(which_dict) :

@@ -1,4 +1,6 @@
 """
+Author: Kevin O' Halloran
+Date: 30/01/2026
 Payroll Processing Application: 
 Take input from multiple CSV input files, 
 Process/Calculate data and convert into a single or multiple output files.

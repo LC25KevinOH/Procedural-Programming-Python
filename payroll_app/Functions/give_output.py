@@ -1,4 +1,6 @@
 """
+Author: Kevin O' Halloran
+Date: 30/01/2026
 Handle the output of payroll data in different formats.
 """
 import os
