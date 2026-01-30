@@ -1,6 +1,6 @@
 # Software Design Document : Payroll Processing App
 
-Kevin O' Halloran
+Author: Kevin O' Halloran
 
 - [Software Design Document : Payroll Processing App](#software-design-document--payroll-processing-app)
   - [Program Overview](#program-overview)
@@ -14,7 +14,8 @@ Kevin O' Halloran
       - [Bonuses (Taxable)](#bonuses-taxable)
       - [Tax Rate (Percent / Amount)](#tax-rate-percentamount)
     - [Output Format](#output-format)
-      - [Payroll Table](#payroll-table)
+      - [CSV Output](#csv-output)
+      - [TXT Output](#txt-output)
   - [Testing Approach](#testing-approach)
 
 
@@ -44,35 +45,45 @@ This payroll application is a piece software that will assist Users in processin
 The input for this program will be in the format of CSV (Comma Separated Values) files. The plan for this program will be to accept 5 input files, which will be listed below.
 
 #### PPSN / Name
+Filename: 'ppsn_name_payroll_v01.csv'
 
+Example:
 ```
 PPSN,Name
 1234567A,John Smith
 ```
 
 #### Timetables / Hours Worked
+Filename: 'hours_worked_payroll_v01.csv'
 
+Example:
 ```
 PPSN,Hours
 1234567A,38
 ```
 
 #### Pay Rate (Per Hour)
+Filename: 'pay_rate_payroll_v01.csv'
 
+Example:
 ```
 PPSN,Rate
 1234567A,14
 ```
 
 #### Bonuses (Taxable)
+Filename: 'bonuses_payroll_v01.csv'
 
+Example:
 ```
 PPSN,Bonuses
 1234567A,50
 ```
 
 #### Tax Rate (Percent/Amount)
+Filename: 'tax_rate_payroll_v01.csv'
 
+Example:
 ```
 PPSN,TaxRate
 1234567A,20
@@ -80,27 +91,32 @@ PPSN,TaxRate
 
 ### Output Format
 
-This program will output either a single CSV file or multiple TXT files depending on User choice. The format will be shown for both below. The CSV will provide less information for all Employees, while the TXT payslips will provide all information.
+This program will output either a single CSV file or multiple TXT files depending on User choice. The format will be shown for both below. The CSV will provide information for all Employees, while each TXT payslips will provide for a specific Employee.
 
 #### CSV Output
+Filename: 'all_employees_{month}-{year}.csv'
 
+Example:
 ```
 PPSN,Name,Gross Salary,Tax Paid,Net Salary
 1234567A, John Smith, 582.0, 116.4, 465.6
 ```
 
 #### TXT Output
+Filename: 'employee_{ppsn}_{month}-{year}.txt'
 
+Example:
 ```
-Payroll Information for Employee PPSN: 1234567A
-{'Bonuses': 50.0,
- 'GrossPay': 582.0,
- 'Hours': 38.0,
- 'Name': 'John Smith',
- 'NetPay': 465.6,
- 'Rate': 14.0,
- 'Tax': 20.0,
- 'TaxAmount': 116.4}
+========================================
+Payroll Information
+Employee PPSN: 1234567A
+Name: John Smith
+Pay Date: 01-2026
+----------------------------------------
+Gross Pay:                   582.00
+Tax Paid:                    116.40
+Net Pay:                     465.60
+========================================
 ```
 
 ## Testing Approach
